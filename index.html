@@ -4,19 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Chihi Love 💕 - Tư vấn tình yêu</title>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+    <title>ChihiLove 💕 - Tư vấn tình yêu</title>
 
     <style>
-
-        /* ==================================================
-           RESET
-        ================================================== */
-
         * {
             margin: 0;
             padding: 0;
@@ -28,2622 +18,1279 @@
         }
 
         body {
-            font-family: "Be Vietnam Pro", sans-serif;
-
-            background:
-                radial-gradient(
-                    circle at 10% 10%,
-                    #ffe5f0 0,
-                    transparent 25%
-                ),
-                radial-gradient(
-                    circle at 90% 20%,
-                    #e9e0ff 0,
-                    transparent 25%
-                ),
-                #fff8fc;
-
-            color: #4b3b4f;
-
-            overflow-x: hidden;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #fff5fa;
+            color: #5d4a55;
+            line-height: 1.6;
         }
 
+        /* =========================
+           THANH MENU
+        ========================== */
 
-        /* ==================================================
-           NAVBAR
-        ================================================== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 3px 15px rgba(220, 130, 170, 0.15);
+        }
 
         .navbar {
-            position: fixed;
-
-            top: 0;
-            left: 0;
-
-            width: 100%;
-
-            z-index: 1000;
-
-            padding: 14px 6%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 15px 25px;
 
             display: flex;
             align-items: center;
             justify-content: space-between;
-
-            background: rgba(255,255,255,0.88);
-
-            backdrop-filter: blur(15px);
-
-            border-bottom: 1px solid rgba(221,155,194,0.2);
         }
-
 
         .logo {
+            font-size: 30px;
+            font-weight: 800;
             text-decoration: none;
-
-            font-family: "Pacifico", cursive;
-
-            font-size: 27px;
-
-            color: #e46b9c;
+            color: #d95c94;
         }
-
 
         .logo span {
-            color: #9a7bd0;
+            color: #9274d8;
         }
 
-
-        .nav-links {
+        .menu {
             display: flex;
-
-            gap: 8px;
-
+            gap: 10px;
             list-style: none;
         }
 
-
-        .nav-links a {
-            display: block;
-
+        .menu a {
             text-decoration: none;
-
-            color: #655267;
-
+            color: #6b5963;
             font-weight: 600;
-
             padding: 10px 17px;
-
-            border-radius: 30px;
-
+            border-radius: 25px;
             transition: 0.3s;
         }
 
-
-        .nav-links a:hover {
-            background: #ffe2ef;
-
-            color: #dc6294;
-
-            transform: translateY(-2px);
+        .menu a:hover {
+            background: #ffe0ef;
+            color: #d64f8b;
         }
 
-
-        .menu-btn {
-            display: none;
-
-            width: 45px;
-            height: 42px;
-
-            border: none;
-
-            border-radius: 12px;
-
-            background: #ffe2ef;
-
-            color: #dc6294;
-
-            font-size: 23px;
-
-            cursor: pointer;
-        }
-
-
-        /* ==================================================
+        /* =========================
            HERO
-        ================================================== */
+        ========================== */
 
         .hero {
-            min-height: 100vh;
-
-            padding: 150px 7% 80px;
-
-            display: grid;
-
-            grid-template-columns: 1.1fr 0.9fr;
-
+            min-height: 570px;
+            display: flex;
             align-items: center;
-
-            gap: 40px;
-
-            position: relative;
-        }
-
-
-        .hero-text {
-            max-width: 700px;
-        }
-
-
-        .badge {
-            display: inline-block;
-
-            padding: 9px 18px;
-
-            background: #ffe4ef;
-
-            color: #d85e91;
-
-            border-radius: 30px;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            margin-bottom: 20px;
-        }
-
-
-        .hero h1 {
-            font-size: clamp(42px, 6vw, 76px);
-
-            line-height: 1.08;
-
-            color: #513e55;
-
-            margin-bottom: 25px;
-        }
-
-
-        .hero h1 span {
-            color: #e16b9d;
-        }
-
-
-        .hero p {
-            max-width: 620px;
-
-            color: #756878;
-
-            font-size: 18px;
-
-            line-height: 1.8;
-
-            margin-bottom: 30px;
-        }
-
-
-        .hero-buttons {
-            display: flex;
-
-            gap: 15px;
-
-            flex-wrap: wrap;
-        }
-
-
-        .btn {
-            border: none;
-
-            cursor: pointer;
-
-            padding: 14px 24px;
-
-            border-radius: 35px;
-
-            font-family: inherit;
-
-            font-size: 15px;
-
-            font-weight: 700;
-
-            transition: 0.3s;
-        }
-
-
-        .btn-primary {
-            background: linear-gradient(
-                135deg,
-                #ea78a7,
-                #b58ce4
-            );
-
-            color: white;
-
-            box-shadow:
-                0 10px 25px rgba(220,107,160,0.25);
-        }
-
-
-        .btn-primary:hover {
-            transform: translateY(-4px);
-
-            box-shadow:
-                0 15px 30px rgba(220,107,160,0.35);
-        }
-
-
-        .btn-secondary {
-            background: white;
-
-            color: #d66c99;
-
-            border: 1px solid #f1c5da;
-        }
-
-
-        .btn-secondary:hover {
-            background: #fff0f6;
-
-            transform: translateY(-3px);
-        }
-
-
-        /* ==================================================
-           HERO ART
-        ================================================== */
-
-        .hero-art {
-            display: flex;
-
             justify-content: center;
+            text-align: center;
 
-            align-items: center;
-
-            position: relative;
-        }
-
-
-        .heart-cloud {
-            width: 400px;
-            height: 400px;
-
-            border-radius: 50%;
+            padding: 80px 20px;
 
             background:
-                linear-gradient(
-                    135deg,
-                    #ffe2ee,
-                    #eee4ff
-                );
-
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            position: relative;
-
-            box-shadow:
-                0 30px 70px rgba(160,111,170,0.15);
+                radial-gradient(circle at 15% 20%, #ffd9ea 0, transparent 25%),
+                radial-gradient(circle at 85% 30%, #e5dcff 0, transparent 25%),
+                linear-gradient(135deg, #fff8fc, #f8f3ff);
         }
 
+        .hero-content {
+            max-width: 850px;
+        }
 
         .heart {
-            font-size: 150px;
-
-            animation: heartbeat 2s infinite;
-
-            filter:
-                drop-shadow(
-                    0 15px 20px
-                    rgba(220,95,145,0.2)
-                );
+            font-size: 65px;
+            animation: heartBeat 1.5s infinite;
         }
 
-
-        .floating {
-            position: absolute;
-
-            font-size: 30px;
-
-            animation:
-                float 4s ease-in-out infinite;
-        }
-
-
-        .f1 {
-            top: 15px;
-            left: 40px;
-        }
-
-
-        .f2 {
-            top: 90px;
-            right: 20px;
-
-            animation-delay: 1s;
-        }
-
-
-        .f3 {
-            bottom: 40px;
-            left: 25px;
-
-            animation-delay: 2s;
-        }
-
-
-        .f4 {
-            bottom: 20px;
-            right: 55px;
-
-            animation-delay: 0.5s;
-        }
-
-
-        @keyframes heartbeat {
-
+        @keyframes heartBeat {
             0%, 100% {
                 transform: scale(1);
             }
 
             50% {
-                transform: scale(1.12);
+                transform: scale(1.15);
             }
-
         }
 
+        .hero h1 {
+            font-size: 52px;
+            color: #d85491;
+            margin: 10px 0;
+        }
 
-        @keyframes float {
+        .hero h1 span {
+            color: #8c72d0;
+        }
 
+        .hero p {
+            font-size: 19px;
+            color: #76646d;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .hero-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 28px;
+
+            background: linear-gradient(135deg, #ef77ad, #9d82df);
+            color: white;
+            text-decoration: none;
+
+            border-radius: 30px;
+            font-weight: bold;
+
+            box-shadow: 0 8px 20px rgba(210, 100, 160, 0.25);
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+        }
+
+        /* =========================
+           PHẦN CHUNG
+        ========================== */
+
+        section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 80px 25px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #d45891;
+        }
+
+        .section-title p {
+            color: #8a777f;
+            margin-top: 5px;
+        }
+
+        /* =========================
+           BÀI VIẾT
+        ========================== */
+
+        .articles {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 25px;
+            padding: 28px;
+
+            box-shadow: 0 8px 30px rgba(210, 120, 160, 0.12);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(210, 120, 160, 0.18);
+        }
+
+        .card-icon {
+            font-size: 45px;
+            margin-bottom: 12px;
+        }
+
+        .card h3 {
+            color: #d45b92;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #76666e;
+        }
+
+        /* =========================
+           TAROT
+        ========================== */
+
+        #tarot {
+            background: linear-gradient(135deg, #fff2f8, #f5f0ff);
+            max-width: none;
+        }
+
+        .tarot-inner {
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .tarot-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .tarot-card {
+            min-height: 270px;
+            background: linear-gradient(145deg, #7563a9, #a98bd2);
+            border-radius: 25px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+
+            padding: 25px;
+
+            box-shadow: 0 10px 25px rgba(100, 75, 140, 0.2);
+
+            transition: 0.3s;
+        }
+
+        .tarot-card:hover {
+            transform: translateY(-8px) rotate(1deg);
+        }
+
+        .tarot-symbol {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .tarot-card h3 {
+            font-size: 23px;
+            margin-bottom: 8px;
+        }
+
+        /* =========================
+           DANH MỤC
+        ========================== */
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .category {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            text-align: center;
+
+            box-shadow: 0 8px 25px rgba(200, 120, 160, 0.12);
+            transition: 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-8px);
+        }
+
+        .category .icon {
+            font-size: 55px;
+        }
+
+        .category h3 {
+            color: #d45791;
+            margin: 12px 0;
+        }
+
+        /* =========================
+           LIÊN HỆ
+        ========================== */
+
+        .contact-box {
+            max-width: 750px;
+            margin: auto;
+
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+
+            box-shadow: 0 10px 30px rgba(200, 120, 160, 0.12);
+            text-align: center;
+        }
+
+        .contact-box p {
+            margin: 12px 0;
+        }
+
+        .contact-button {
+            display: inline-block;
+            margin-top: 20px;
+
+            background: #d85b94;
+            color: white;
+
+            text-decoration: none;
+            padding: 13px 25px;
+            border-radius: 25px;
+        }
+
+        /* =========================
+           THÔNG TIN
+        ========================== */
+
+        .people {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .person {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            text-align: center;
+
+            box-shadow: 0 8px 25px rgba(200, 120, 160, 0.12);
+        }
+
+        .person-avatar {
+            width: 90px;
+            height: 90px;
+
+            margin: auto;
+            border-radius: 50%;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #ffe1ef;
+            font-size: 45px;
+        }
+
+        .person h3 {
+            color: #d35791;
+            margin-top: 15px;
+        }
+
+        /* =========================
+           CHIBI GÓC PHẢI
+           ========================= */
+
+        #chibi-helper {
+            position: fixed !important;
+
+            right: 20px !important;
+            bottom: 20px !important;
+
+            width: 110px !important;
+            height: 110px !important;
+
+            z-index: 99999 !important;
+
+            cursor: pointer;
+
+            transition: transform 0.25s ease !important;
+        }
+
+        #chibi-helper img {
+            display: block !important;
+
+            width: 110px !important;
+            height: 110px !important;
+
+            max-width: 110px !important;
+            max-height: 110px !important;
+
+            object-fit: contain !important;
+
+            border: none !important;
+            outline: none !important;
+
+            animation: chibiFloat 2.5s ease-in-out infinite;
+        }
+
+        @keyframes chibiFloat {
             0%, 100% {
                 transform: translateY(0);
             }
 
             50% {
-                transform: translateY(-15px);
+                transform: translateY(-8px);
             }
-
         }
 
+        /* Lời thoại */
 
-        /* ==================================================
-           SECTION
-        ================================================== */
-
-        section {
-            padding: 90px 7%;
-
-            scroll-margin-top: 80px;
-        }
-
-
-        .section-title {
-            text-align: center;
-
-            margin-bottom: 50px;
-        }
-
-
-        .section-title .small {
-            display: block;
-
-            color: #dd6b9c;
-
-            font-size: 14px;
-
-            font-weight: 800;
-
-            letter-spacing: 2px;
-
-            text-transform: uppercase;
-
-            margin-bottom: 8px;
-        }
-
-
-        .section-title h2 {
-            color: #523f56;
-
-            font-size: 38px;
-
-            margin-bottom: 12px;
-        }
-
-
-        .section-title p {
-            color: #817382;
-        }
-
-
-        /* ==================================================
-           ARTICLE
-        ================================================== */
-
-        .articles {
-            background: rgba(255,255,255,0.45);
-        }
-
-
-        .article-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-
-        .article-card {
-            overflow: hidden;
-
-            background:
-                rgba(255,255,255,0.9);
-
-            border-radius: 25px;
-
-            border: 1px solid #f3dce8;
-
-            box-shadow:
-                0 15px 40px
-                rgba(140,100,140,0.07);
-
-            transition: 0.3s;
-        }
-
-
-        .article-card:hover {
-            transform: translateY(-8px);
-
-            box-shadow:
-                0 20px 45px
-                rgba(140,100,140,0.13);
-        }
-
-
-        .article-image {
-            height: 190px;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            font-size: 70px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffe2ef,
-                    #eee4ff
-                );
-        }
-
-
-        .article-content {
-            padding: 25px;
-        }
-
-
-        .article-content .tag {
-            display: inline-block;
-
-            padding: 6px 11px;
-
-            background: #f8e7f1;
-
-            color: #c75f8d;
-
-            border-radius: 20px;
-
-            font-size: 12px;
-
-            font-weight: 700;
-
-            margin-bottom: 13px;
-        }
-
-
-        .article-content h3 {
-            color: #554256;
-
-            font-size: 20px;
-
-            margin-bottom: 12px;
-        }
-
-
-        .article-content p {
-            color: #827483;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-        }
-
-
-        .read-more {
-            display: inline-block;
-
-            color: #db6798;
-
-            text-decoration: none;
-
-            font-size: 14px;
-
-            font-weight: 700;
-
-            margin-top: 18px;
-        }
-
-
-        /* ==================================================
-           CATEGORY
-        ================================================== */
-
-        .category-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-
-        .category-card {
-            padding: 35px 25px;
-
-            text-align: center;
-
-            background: white;
-
-            border-radius: 25px;
-
-            border: 1px solid #f2dce8;
-
-            transition: 0.3s;
-        }
-
-
-        .category-card:hover {
-            transform: translateY(-7px);
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #ffffff,
-                    #fff4f8
-                );
-        }
-
-
-        .category-icon {
-            width: 75px;
-            height: 75px;
-
-            margin: auto auto 20px;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            border-radius: 24px;
-
-            background: #ffe7f0;
-
-            font-size: 35px;
-        }
-
-
-        .category-card h3 {
-            color: #564357;
-
-            margin-bottom: 10px;
-        }
-
-
-        .category-card p {
-            color: #837483;
-
-            font-size: 14px;
-
-            line-height: 1.7;
-        }
-
-
-        /* ==================================================
-           TAROT
-        ================================================== */
-
-        .tarot-section {
-            background:
-                linear-gradient(
-                    135deg,
-                    #f9edff,
-                    #fff0f6
-                );
-        }
-
-
-        .tarot-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 25px;
-        }
-
-
-        .tarot-card {
-            min-height: 300px;
-
-            padding: 30px;
-
-            display: flex;
-
-            flex-direction: column;
-
-            justify-content: center;
-
-            align-items: center;
-
-            text-align: center;
-
-            color: white;
-
-            border-radius: 25px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    #8566ad,
-                    #d377a4
-                );
-
-            box-shadow:
-                0 20px 35px
-                rgba(120,80,150,0.18);
-
-            transition: 0.4s;
-        }
-
-
-        .tarot-card:hover {
-            transform:
-                rotateY(8deg)
-                translateY(-8px);
-        }
-
-
-        .tarot-symbol {
-            font-size: 65px;
-
-            margin-bottom: 20px;
-        }
-
-
-        .tarot-card h3 {
-            font-size: 22px;
-
-            margin-bottom: 10px;
-        }
-
-
-        .tarot-card p {
-            opacity: 0.9;
-
-            font-size: 14px;
-
-            line-height: 1.6;
-        }
-
-
-        /* ==================================================
-           CONTACT
-        ================================================== */
-
-        .contact-container {
-            max-width: 1000px;
-
-            margin: auto;
-
-            padding: 40px;
-
-            background: white;
-
-            border-radius: 30px;
-
-            border: 1px solid #f0dce7;
-
-            box-shadow:
-                0 20px 50px
-                rgba(120,80,120,0.08);
-        }
-
-
-        .contact-grid {
-            display: grid;
-
-            grid-template-columns:
-                1fr 1fr;
-
-            gap: 35px;
-        }
-
-
-        .contact-info h3 {
-            font-size: 27px;
-
-            margin-bottom: 15px;
-        }
-
-
-        .contact-info p {
-            color: #7e7080;
-
-            line-height: 1.8;
-        }
-
-
-        .contact-item {
-            margin-top: 20px;
-
-            padding: 15px;
-
-            background: #fff5f9;
-
-            border-radius: 15px;
-        }
-
-
-        .contact-item strong {
-            color: #d76092;
-        }
-
-
-        /* ==================================================
-           FORM
-        ================================================== */
-
-        .form-group {
-            margin-bottom: 17px;
-        }
-
-
-        .form-group label {
-            display: block;
-
-            font-size: 13px;
-
-            font-weight: 700;
-
-            margin-bottom: 7px;
-        }
-
-
-        input,
-        textarea {
-            width: 100%;
-
-            padding: 14px 16px;
-
-            outline: none;
-
-            border: 1px solid #edd6e3;
-
-            border-radius: 15px;
-
-            background: #fffafd;
-
-            font-family: inherit;
-
-            transition: 0.2s;
-        }
-
-
-        input:focus,
-        textarea:focus {
-            border-color: #df7ba5;
-
-            box-shadow:
-                0 0 0 4px #ffeaf3;
-        }
-
-
-        textarea {
-            min-height: 120px;
-
-            resize: vertical;
-        }
-
-
-        /* ==================================================
-           INFORMATION
-        ================================================== */
-
-        .people-grid {
-            max-width: 850px;
-
-            margin: auto;
-
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 25px;
-        }
-
-
-        .person-card {
-            padding: 35px;
-
-            text-align: center;
-
-            background: white;
-
-            border-radius: 25px;
-
-            border: 1px solid #f0dce7;
-
-            box-shadow:
-                0 15px 35px
-                rgba(120,80,120,0.07);
-        }
-
-
-        .person-avatar {
-            width: 100px;
-            height: 100px;
-
-            margin: auto auto 20px;
-
-            display: flex;
-
-            justify-content: center;
-            align-items: center;
-
-            border-radius: 50%;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffe0ed,
-                    #e9deff
-                );
-
-            font-size: 45px;
-        }
-
-
-        .person-card h3 {
-            color: #554156;
-
-            margin-bottom: 8px;
-        }
-
-
-        .person-card p {
-            color: #827483;
-
-            font-size: 14px;
-
-            line-height: 1.6;
-        }
-
-
-        /* ==================================================
-           FOOTER
-        ================================================== */
-
-        footer {
-            padding: 45px 7%;
-
-            text-align: center;
-
-            background: #493c4d;
-
-            color: white;
-        }
-
-
-        .footer-logo {
-            color: #ffb0ce;
-
-            font-family: "Pacifico", cursive;
-
-            font-size: 25px;
-
-            margin-bottom: 10px;
-        }
-
-
-        footer p {
-            color: #d8cbd9;
-
-            font-size: 13px;
-        }
-
-
-        /* ==================================================
-           CHIHI FLOATING BUTTON
-        ================================================== */
-
-        .chihi-container {
-            position: fixed;
-
-            right: 22px;
-            bottom: 20px;
-
-            z-index: 1500;
-
-            cursor: pointer;
-        }
-
-
-        /* Bong bóng lời thoại */
-
-        .chihi-message {
+        #chibi-message {
             position: absolute;
 
-            right: 5px;
-            bottom: 112px;
+            right: 90px;
+            bottom: 45px;
 
-            width: 220px;
+            width: 215px;
 
             padding: 13px 15px;
 
             background: white;
+            color: #d45791;
 
-            color: #d35d91;
+            border-radius: 18px;
 
-            border-radius:
-                18px
-                18px
-                5px
-                18px;
-
-            box-shadow:
-                0 10px 35px
-                rgba(80,50,80,0.15);
-
-            font-size: 13px;
-
-            font-weight: 700;
-
+            font-size: 15px;
+            font-weight: bold;
             text-align: center;
 
-            animation:
-                messageFloat 3s infinite;
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.13);
+
+            opacity: 1;
+            transition: 0.3s;
         }
 
-
-        .chihi-message::after {
+        #chibi-message::after {
             content: "";
 
             position: absolute;
 
-            right: 20px;
+            right: -10px;
+            bottom: 15px;
 
-            bottom: -9px;
-
-            border-width:
-                10px
-                0
-                0
-                12px;
-
+            border-width: 8px 0 8px 12px;
             border-style: solid;
-
-            border-color:
-                transparent
-                transparent
-                transparent
-                white;
+            border-color: transparent transparent transparent white;
         }
 
+        /* =========================
+           MODAL TƯ VẤN
+        ========================== */
 
-        /*
-           HÌNH CHIHI
-        */
-
-        .chihi {
-            width: 100px;
-            height: 100px;
-
-            display: flex;
-
-            justify-content: center;
-
-            align-items: center;
-
-            animation:
-                chihiFloat 3s ease-in-out infinite;
-
-            transition: 0.3s;
-        }
-
-
-        .chihi img {
-            width: 100px;
-            height: 100px;
-
-            object-fit: contain;
-
-            display: block;
-
-            /*
-               Nếu hình PNG có nền trong suốt,
-               Chihi sẽ nổi đẹp trên website.
-            */
-
-            filter:
-                drop-shadow(
-                    0 8px 12px
-                    rgba(100,60,100,0.20)
-                );
-
-            transition: 0.3s;
-        }
-
-
-        .chihi:hover img {
-            transform:
-                scale(1.08)
-                rotate(-3deg);
-        }
-
-
-        @keyframes chihiFloat {
-
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-9px);
-            }
-
-        }
-
-
-        @keyframes messageFloat {
-
-            0%, 100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-5px);
-            }
-
-        }
-
-
-        /* ==================================================
-           MODAL
-        ================================================== */
-
-        .modal {
+        #consultationModal {
             display: none;
 
             position: fixed;
-
             inset: 0;
 
-            z-index: 3000;
+            background: rgba(60, 35, 55, 0.5);
 
-            padding: 20px;
+            z-index: 100000;
 
             align-items: center;
-
             justify-content: center;
 
-            background:
-                rgba(50,35,55,0.5);
-
-            backdrop-filter: blur(6px);
+            padding: 20px;
         }
 
-
-        .modal.active {
+        #consultationModal.active {
             display: flex;
         }
 
-
-        .modal-box {
+        .modal {
             width: 100%;
+            max-width: 520px;
 
-            max-width: 550px;
-
-            max-height: 90vh;
-
-            overflow-y: auto;
-
-            position: relative;
+            background: white;
+            border-radius: 30px;
 
             padding: 35px;
 
-            background: white;
+            position: relative;
 
-            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(50, 20, 40, 0.25);
 
-            box-shadow:
-                0 30px 80px
-                rgba(40,20,50,0.25);
-
-            animation:
-                modalIn 0.35s ease;
+            animation: modalShow 0.3s ease;
         }
 
-
-        @keyframes modalIn {
-
+        @keyframes modalShow {
             from {
                 opacity: 0;
-
-                transform:
-                    translateY(30px)
-                    scale(0.95);
+                transform: translateY(25px) scale(0.95);
             }
 
             to {
                 opacity: 1;
-
-                transform:
-                    translateY(0)
-                    scale(1);
+                transform: translateY(0) scale(1);
             }
-
         }
-
 
         .close {
             position: absolute;
 
+            top: 15px;
             right: 20px;
-            top: 18px;
 
-            width: 38px;
-            height: 38px;
+            width: 35px;
+            height: 35px;
 
             border: none;
-
             border-radius: 50%;
 
-            background: #fff0f6;
-
-            color: #d35d91;
+            background: #ffe5f1;
+            color: #d55390;
 
             font-size: 22px;
 
             cursor: pointer;
         }
 
-
-        .modal-header {
+        .modal h2 {
             text-align: center;
+            color: #d45791;
+            margin-bottom: 8px;
+        }
 
+        .modal-subtitle {
+            text-align: center;
+            color: #88747d;
             margin-bottom: 25px;
         }
 
-
-        .modal-header .emoji {
-            font-size: 48px;
+        .form-group {
+            margin-bottom: 18px;
         }
 
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
 
-        .modal-header h2 {
-            color: #554156;
-
-            margin: 8px 0;
+            font-weight: 600;
+            color: #66535d;
         }
 
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
 
-        .modal-header p {
-            color: #887989;
+            border: 2px solid #f1dce7;
+            border-radius: 15px;
 
-            font-size: 13px;
+            padding: 12px 14px;
 
-            line-height: 1.6;
+            font-family: inherit;
+            font-size: 15px;
+
+            outline: none;
+
+            transition: 0.2s;
         }
 
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #dc72a5;
+            box-shadow: 0 0 0 4px #ffeaf3;
+        }
 
-        /* ==================================================
-           TOAST
-        ================================================== */
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
 
-        .toast {
-            position: fixed;
+        .submit-button {
+            width: 100%;
 
-            left: 50%;
-            bottom: 25px;
+            border: none;
 
-            z-index: 5000;
+            padding: 14px;
 
-            padding: 15px 22px;
+            border-radius: 25px;
+
+            background: linear-gradient(135deg, #ed72a9, #9a7bd5);
 
             color: white;
 
-            background: #514253;
+            font-size: 16px;
+            font-weight: bold;
 
-            border-radius: 30px;
+            cursor: pointer;
 
-            font-size: 14px;
-
-            opacity: 0;
-
-            transform:
-                translate(-50%, 120px);
-
-            transition: 0.4s;
+            transition: 0.3s;
         }
 
-
-        .toast.show {
-            opacity: 1;
-
-            transform:
-                translate(-50%, 0);
+        .submit-button:hover {
+            transform: translateY(-2px);
         }
 
+        /* =========================
+           FOOTER
+        ========================== */
 
-        /* ==================================================
-           RESPONSIVE TABLET
-        ================================================== */
+        footer {
+            background: #5d4b58;
+            color: white;
 
-        @media (max-width: 900px) {
+            text-align: center;
 
-            .hero {
-                grid-template-columns: 1fr;
+            padding: 30px 20px;
+        }
 
-                text-align: center;
+        footer span {
+            color: #ffafd0;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================== */
+
+        @media (max-width: 800px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
             }
 
-
-            .hero-text {
-                margin: auto;
-            }
-
-
-            .hero p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-
-            .hero-buttons {
+            .menu {
+                flex-wrap: wrap;
                 justify-content: center;
             }
 
-
-            .heart-cloud {
-                width: 320px;
-                height: 320px;
-            }
-
-
-            .article-grid,
-            .category-grid,
-            .tarot-grid {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
-
-        }
-
-
-        /* ==================================================
-           RESPONSIVE MOBILE
-        ================================================== */
-
-        @media (max-width: 650px) {
-
-            .navbar {
-                padding: 13px 5%;
-            }
-
-
-            .logo {
-                font-size: 23px;
-            }
-
-
-            .menu-btn {
-                display: block;
-            }
-
-
-            .nav-links {
-                display: none;
-
-                position: absolute;
-
-                top: 70px;
-
-                left: 5%;
-                right: 5%;
-
-                padding: 15px;
-
-                flex-direction: column;
-
-                background: white;
-
-                border-radius: 20px;
-
-                box-shadow:
-                    0 15px 40px
-                    rgba(80,50,80,0.12);
-            }
-
-
-            .nav-links.active {
-                display: flex;
-            }
-
-
-            .nav-links a {
-                text-align: center;
-            }
-
-
-            section {
-                padding: 70px 5%;
-            }
-
-
-            .hero {
-                padding:
-                    125px
-                    5%
-                    60px;
-            }
-
-
             .hero h1 {
-                font-size: 43px;
+                font-size: 38px;
             }
 
-
-            .hero p {
-                font-size: 15px;
-            }
-
-
-            .heart-cloud {
-                width: 260px;
-                height: 260px;
-            }
-
-
-            .heart {
-                font-size: 100px;
-            }
-
-
-            .article-grid,
-            .category-grid,
-            .tarot-grid,
-            .contact-grid,
-            .people-grid {
+            .articles,
+            .tarot-cards,
+            .categories {
                 grid-template-columns: 1fr;
             }
 
-
-            .section-title h2 {
-                font-size: 30px;
+            .people {
+                grid-template-columns: 1fr;
             }
 
+            #chibi-helper {
+                width: 80px !important;
+                height: 80px !important;
 
-            .contact-container {
-                padding: 25px;
+                right: 10px !important;
+                bottom: 15px !important;
             }
 
+            #chibi-helper img {
+                width: 80px !important;
+                height: 80px !important;
 
-            /* Chihi trên điện thoại */
-
-            .chihi-container {
-                right: 12px;
-                bottom: 12px;
+                max-width: 80px !important;
+                max-height: 80px !important;
             }
 
-
-            .chihi {
-                width: 78px;
-                height: 78px;
-            }
-
-
-            .chihi img {
-                width: 78px;
-                height: 78px;
-            }
-
-
-            .chihi-message {
-                bottom: 88px;
-
+            #chibi-message {
                 width: 175px;
+                right: 65px;
+                bottom: 35px;
 
-                font-size: 12px;
+                font-size: 13px;
             }
-
         }
-
     </style>
 </head>
 
-
 <body>
 
+    <!-- =========================
+         MENU
+    ========================== -->
 
-<!-- ==================================================
-     NAVBAR
-================================================== -->
+    <header>
+        <nav class="navbar">
 
-<header class="navbar">
+            <a href="#home" class="logo">
+                Chihi<span>Love</span> 💕
+            </a>
 
-    <a href="#home" class="logo">
-        Chihi<span>Love</span> 💕
-    </a>
+            <ul class="menu">
+                <li>
+                    <a href="#home">Trang chủ</a>
+                </li>
+
+                <li>
+                    <a href="#danhmuc">Danh mục</a>
+                </li>
+
+                <li>
+                    <a href="#lienhe">Liên hệ</a>
+                </li>
+
+                <li>
+                    <a href="#thongtin">Thông tin</a>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
 
 
-    <button
-        class="menu-btn"
-        onclick="toggleMenu()"
-        aria-label="Mở menu"
+    <!-- =========================
+         TRANG CHỦ
+    ========================== -->
+
+    <main id="home">
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+                <div class="heart">💗</div>
+
+                <h1>
+                    Chào mừng đến với
+                    <span>ChihiLove</span>
+                </h1>
+
+                <p>
+                    Một góc nhỏ dành cho những trái tim đang yêu,
+                    đang nhớ, đang phân vân hoặc đơn giản là muốn
+                    tìm một người lắng nghe. 🌷
+                </p>
+
+                <a href="#articles" class="hero-button">
+                    💕 Khám phá ngay
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BÀI VIẾT -->
+
+        <section id="articles">
+
+            <div class="section-title">
+                <h2>💌 Góc tâm sự tình yêu</h2>
+                <p>Những câu chuyện dành cho trái tim của bạn</p>
+            </div>
+
+            <div class="articles">
+
+                <div class="card">
+                    <div class="card-icon">💗</div>
+
+                    <h3>
+                        Làm sao biết người ấy thích mình?
+                    </h3>
+
+                    <p>
+                        Có những dấu hiệu rất nhỏ nhưng lại nói lên
+                        rất nhiều điều. Hãy cùng tìm hiểu những biểu
+                        hiện khi một người đang dành tình cảm cho bạn.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">🌷</div>
+
+                    <h3>
+                        Khi yêu nhưng không biết nói gì
+                    </h3>
+
+                    <p>
+                        Đôi khi chúng ta rất yêu một người nhưng lại
+                        không biết cách thể hiện. Đừng lo, tình yêu
+                        cũng cần được học cách giao tiếp.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">💔</div>
+
+                    <h3>
+                        Làm gì khi người ấy lạnh nhạt?
+                    </h3>
+
+                    <p>
+                        Đừng vội nghĩ rằng mọi thứ đã kết thúc.
+                        Hãy bình tĩnh nhìn lại mối quan hệ và tìm
+                        cách nói chuyện với nhau.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">🌙</div>
+
+                    <h3>
+                        Yêu xa có thể hạnh phúc không?
+                    </h3>
+
+                    <p>
+                        Khoảng cách không nhất thiết là kết thúc.
+                        Niềm tin, sự quan tâm và giao tiếp chính là
+                        điều giúp tình yêu đi xa hơn.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">🫶</div>
+
+                    <h3>
+                        Cách chữa lành sau chia tay
+                    </h3>
+
+                    <p>
+                        Hãy cho bản thân thời gian. Không cần phải
+                        quên ngay một người từng quan trọng với mình.
+                    </p>
+                </div>
+
+
+                <div class="card">
+                    <div class="card-icon">✨</div>
+
+                    <h3>
+                        Khi nào nên tỏ tình?
+                    </h3>
+
+                    <p>
+                        Nếu bạn đang phân vân có nên nói ra tình cảm,
+                        hãy xem xét cảm xúc của cả hai và chọn thời
+                        điểm phù hợp.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- TAROT -->
+
+        <section id="tarot">
+
+            <div class="tarot-inner">
+
+                <div class="section-title">
+                    <h2>🔮 Tarot tình yêu</h2>
+                    <p>
+                        Một chút bói vui để lắng nghe cảm xúc của bạn
+                    </p>
+                </div>
+
+
+                <div class="tarot-cards">
+
+                    <div class="tarot-card">
+
+                        <div class="tarot-symbol">🌹</div>
+
+                        <h3>Two of Cups</h3>
+
+                        <p>
+                            Sự kết nối, đồng điệu và tình cảm đến từ
+                            cả hai phía.
+                        </p>
+
+                    </div>
+
+
+                    <div class="tarot-card">
+
+                        <div class="tarot-symbol">🌙</div>
+
+                        <h3>The Moon</h3>
+
+                        <p>
+                            Có thể bạn đang có nhiều suy nghĩ và chưa
+                            nhìn rõ cảm xúc thật của mình.
+                        </p>
+
+                    </div>
+
+
+                    <div class="tarot-card">
+
+                        <div class="tarot-symbol">💫</div>
+
+                        <h3>The Star</h3>
+
+                        <p>
+                            Hy vọng, chữa lành và những điều tích cực
+                            đang chờ đợi phía trước.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             DANH MỤC
+        ========================== -->
+
+        <section id="danhmuc">
+
+            <div class="section-title">
+
+                <h2>🌸 Danh mục</h2>
+
+                <p>
+                    Chọn điều bạn đang cần
+                </p>
+
+            </div>
+
+
+            <div class="categories">
+
+                <div class="category">
+
+                    <div class="icon">💬</div>
+
+                    <h3>Tư vấn</h3>
+
+                    <p>
+                        Bạn đang gặp vấn đề trong tình yêu?
+                        Hãy chia sẻ để được lắng nghe và tư vấn.
+                    </p>
+
+                </div>
+
+
+                <div class="category">
+
+                    <div class="icon">🫂</div>
+
+                    <h3>Trò chuyện</h3>
+
+                    <p>
+                        Một cuộc trò chuyện nhẹ nhàng có thể giúp
+                        bạn cảm thấy tốt hơn rất nhiều.
+                    </p>
+
+                </div>
+
+
+                <div class="category">
+
+                    <div class="icon">🔮</div>
+
+                    <h3>Xem bói</h3>
+
+                    <p>
+                        Tarot tình yêu vui vẻ, giúp bạn có thêm
+                        một góc nhìn về chuyện tình cảm.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LIÊN HỆ
+        ========================== -->
+
+        <section id="lienhe">
+
+            <div class="section-title">
+
+                <h2>📮 Liên hệ</h2>
+
+                <p>
+                    Hãy gửi lời nhắn cho ChihiLove
+                </p>
+
+            </div>
+
+
+            <div class="contact-box">
+
+                <p>
+                    💕 Bạn muốn được tư vấn riêng?
+                </p>
+
+                <p>
+                    Hãy nhấn vào cô Chibi ở góc phải màn hình
+                    để đăng ký tư vấn.
+                </p>
+
+                <p>
+                    🌷 Chúng mình luôn sẵn sàng lắng nghe bạn.
+                </p>
+
+                <a
+                    href="mailto:your-email@example.com"
+                    class="contact-button"
+                >
+                    📧 Gửi email
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             THÔNG TIN
+        ========================== -->
+
+        <section id="thongtin">
+
+            <div class="section-title">
+
+                <h2>🌷 Thông tin</h2>
+
+                <p>
+                    Những người đứng sau ChihiLove
+                </p>
+
+            </div>
+
+
+            <div class="people">
+
+                <div class="person">
+
+                    <div class="person-avatar">
+                        👩🏻
+                    </div>
+
+                    <h3>
+                        Chu Đặng Phương Linh
+                    </h3>
+
+                    <p>
+                        Tư vấn & nội dung tình yêu 💕
+                    </p>
+
+                </div>
+
+
+                <div class="person">
+
+                    <div class="person-avatar">
+                        👩🏻
+                    </div>
+
+                    <h3>
+                        Đặng Võ Ngân Trâm
+                    </h3>
+
+                    <p>
+                        Nội dung & hỗ trợ tư vấn 🌷
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         CHIBI GÓC PHẢI
+         =========================
+
+         QUAN TRỌNG:
+         Hình phải tên chibi.png
+    -->
+
+    <div
+        id="chibi-helper"
+        onclick="openConsultation()"
     >
-        ☰
-    </button>
+
+        <div id="chibi-message">
+            👋 Nhấn vào tớ để<br>
+            chọn tư vấn nha! 💕
+        </div>
+
+        <img
+            src="chibi.png"
+            alt="Chibi tư vấn tình yêu"
+        >
+
+    </div>
 
 
-    <ul class="nav-links" id="navLinks">
+    <!-- =========================
+         KHUNG ĐĂNG KÝ TƯ VẤN
+    ========================== -->
 
-        <li>
-            <a href="#home">
-                🏠 Trang chủ
-            </a>
-        </li>
+    <div
+        id="consultationModal"
+        onclick="closeOutside(event)"
+    >
 
-        <li>
-            <a href="#categories">
-                💕 Danh mục
-            </a>
-        </li>
-
-        <li>
-            <a href="#contact">
-                💌 Liên hệ
-            </a>
-        </li>
-
-        <li>
-            <a href="#info">
-                🌷 Thông tin
-            </a>
-        </li>
-
-    </ul>
-
-</header>
-
-
-
-<!-- ==================================================
-     HERO
-================================================== -->
-
-<section class="hero" id="home">
-
-
-    <div class="hero-text">
-
-        <span class="badge">
-            💗 Góc nhỏ dành cho những trái tim
-        </span>
-
-
-        <h1>
-            Chuyện tình yêu
-            <br>
-
-            <span>
-                của bạn
-            </span>
-            thì sao?
-        </h1>
-
-
-        <p>
-            Có những chuyện tình yêu rất khó nói thành lời.
-            Hãy để Chihi lắng nghe bạn, cùng bạn tháo gỡ
-            những khúc mắc trong tình cảm và tìm ra hướng
-            đi phù hợp nhất.
-        </p>
-
-
-        <div class="hero-buttons">
+        <div class="modal">
 
             <button
-                class="btn btn-primary"
-                onclick="openModal()"
+                class="close"
+                onclick="closeConsultation()"
             >
-                💕 Nhờ Chihi tư vấn
+                ×
             </button>
 
 
-            <a
-                href="#articles"
-                class="btn btn-secondary"
-            >
-                📖 Đọc chuyện tình yêu
-            </a>
-
-        </div>
-
-    </div>
-
-
-
-    <div class="hero-art">
-
-        <div class="heart-cloud">
-
-            <div class="floating f1">
-                💕
-            </div>
-
-            <div class="floating f2">
-                ✨
-            </div>
-
-            <div class="floating f3">
-                🌷
-            </div>
-
-            <div class="floating f4">
-                💌
-            </div>
-
-
-            <div class="heart">
-                💗
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     LOVE ARTICLES
-================================================== -->
-
-<section
-    class="articles"
-    id="articles"
->
-
-    <div class="section-title">
-
-        <span class="small">
-            Love Blog
-        </span>
-
-
-        <h2>
-            Những câu chuyện về tình yêu 💕
-        </h2>
-
-
-        <p>
-            Một chút tâm sự, một chút kinh nghiệm
-            và thật nhiều yêu thương.
-        </p>
-
-    </div>
-
-
-
-    <div class="article-grid">
-
-
-        <article class="article-card">
-
-            <div class="article-image">
-                💌
-            </div>
-
-
-            <div class="article-content">
-
-                <span class="tag">
-                    Tình yêu
-                </span>
-
-
-                <h3>
-                    Khi người ấy bỗng nhiên lạnh nhạt
-                </h3>
-
-
-                <p>
-                    Người ấy không còn nhắn tin như trước?
-                    Hãy cùng tìm hiểu những nguyên nhân
-                    có thể khiến một người thay đổi cách
-                    thể hiện tình cảm.
-                </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                    onclick="showToast('Bài viết đang được Chihi cập nhật 💕'); return false;"
-                >
-                    Đọc bài viết →
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="article-card">
-
-            <div class="article-image">
-                🌷
-            </div>
-
-
-            <div class="article-content">
-
-                <span class="tag">
-                    Tâm sự
-                </span>
-
-
-                <h3>
-                    Có nên quay lại với người yêu cũ?
-                </h3>
-
-
-                <p>
-                    Đôi khi chúng ta nhớ một người không có
-                    nghĩa rằng chúng ta nên quay lại.
-                    Vậy khi nào một mối tình cũ đáng để
-                    cho thêm một cơ hội?
-                </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                    onclick="showToast('Bài viết đang được Chihi cập nhật 💕'); return false;"
-                >
-                    Đọc bài viết →
-                </a>
-
-            </div>
-
-        </article>
-
-
-
-        <article class="article-card">
-
-            <div class="article-image">
-                🫶
-            </div>
-
-
-            <div class="article-content">
-
-                <span class="tag">
-                    Chữa lành
-                </span>
-
-
-                <h3>
-                    Học cách yêu bản thân trước
-                </h3>
-
-
-                <p>
-                    Một mối quan hệ đẹp bắt đầu từ việc
-                    bạn biết trân trọng chính mình.
-                    Hãy cùng Chihi học cách yêu thương
-                    bản thân nhé.
-                </p>
-
-
-                <a
-                    href="#"
-                    class="read-more"
-                    onclick="showToast('Bài viết đang được Chihi cập nhật 💕'); return false;"
-                >
-                    Đọc bài viết →
-                </a>
-
-            </div>
-
-        </article>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     TAROT
-================================================== -->
-
-<section class="tarot-section">
-
-
-    <div class="section-title">
-
-        <span class="small">
-            Tarot Corner
-        </span>
-
-
-        <h2>
-            Góc Tarot 🔮
-        </h2>
-
-
-        <p>
-            Một chút huyền bí để cùng bạn khám phá
-            những điều trong chuyện tình cảm.
-        </p>
-
-    </div>
-
-
-
-    <div class="tarot-grid">
-
-
-        <div class="tarot-card">
-
-            <div class="tarot-symbol">
-                🌙
-            </div>
-
-
-            <h3>
-                The Moon
-            </h3>
-
-
-            <p>
-                Những cảm xúc chưa được nói ra,
-                sự mơ hồ và những điều đang ẩn
-                phía sau.
-            </p>
-
-        </div>
-
-
-
-        <div class="tarot-card">
-
-            <div class="tarot-symbol">
-                💞
-            </div>
-
-
-            <h3>
-                The Lovers
-            </h3>
-
-
-            <p>
-                Một lá bài nói về tình yêu,
-                sự lựa chọn và kết nối giữa
-                hai trái tim.
-            </p>
-
-        </div>
-
-
-
-        <div class="tarot-card">
-
-            <div class="tarot-symbol">
-                ⭐
-            </div>
-
-
-            <h3>
-                The Star
-            </h3>
-
-
-            <p>
-                Hy vọng, chữa lành và một tín hiệu
-                tích cực cho hành trình tình cảm.
-            </p>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     CATEGORY
-================================================== -->
-
-<section id="categories">
-
-
-    <div class="section-title">
-
-        <span class="small">
-            Danh mục
-        </span>
-
-
-        <h2>
-            Bạn muốn Chihi giúp gì? 🥰
-        </h2>
-
-
-        <p>
-            Chọn một chủ đề phù hợp với câu chuyện
-            của bạn.
-        </p>
-
-    </div>
-
-
-
-    <div class="category-grid">
-
-
-        <!-- TƯ VẤN -->
-
-        <div class="category-card">
-
-            <div class="category-icon">
-                💕
-            </div>
-
-
-            <h3>
-                Tư vấn
-            </h3>
-
-
-            <p>
-                Chia sẻ câu chuyện tình yêu và nhận
-                những lời khuyên phù hợp.
+            <h2>
+                💕 Đăng ký tư vấn
+            </h2>
+
+            <p class="modal-subtitle">
+                Hãy chia sẻ một chút với Chihi nhé 🌷
             </p>
 
 
-            <br>
-
-
-            <button
-                class="btn btn-primary"
-                onclick="openModal()"
-            >
-                Chọn tư vấn
-            </button>
-
-        </div>
-
-
-
-        <!-- TRÒ CHUYỆN -->
-
-        <div class="category-card">
-
-            <div class="category-icon">
-                💬
-            </div>
-
-
-            <h3>
-                Trò chuyện
-            </h3>
-
-
-            <p>
-                Nếu bạn chỉ cần một người lắng nghe,
-                Chihi luôn sẵn sàng.
-            </p>
-
-
-            <br>
-
-
-            <button
-                class="btn btn-secondary"
-                onclick="openModal()"
-            >
-                Bắt đầu trò chuyện
-            </button>
-
-        </div>
-
-
-
-        <!-- XEM BÓI -->
-
-        <div class="category-card">
-
-            <div class="category-icon">
-                🔮
-            </div>
-
-
-            <h3>
-                Xem bói
-            </h3>
-
-
-            <p>
-                Khám phá tình yêu thông qua Tarot
-                và những thông điệp thú vị.
-            </p>
-
-
-            <br>
-
-
-            <button
-                class="btn btn-secondary"
-                onclick="showToast('Tính năng Tarot đang được Chihi chuẩn bị 🔮')"
-            >
-                Xem Tarot
-            </button>
-
-        </div>
-
-
-    </div>
-
-</section>
-
-
-
-<!-- ==================================================
-     CONTACT
-================================================== -->
-
-<section id="contact">
-
-
-    <div class="section-title">
-
-        <span class="small">
-            Contact
-        </span>
-
-
-        <h2>
-            Liên hệ với Chihi 💌
-        </h2>
-
-
-        <p>
-            Bạn có điều muốn chia sẻ?
-            Hãy để lại lời nhắn nhé.
-        </p>
-
-    </div>
-
-
-
-    <div class="contact-container">
-
-
-        <div class="contact-grid">
-
-
-            <div class="contact-info">
-
-                <h3>
-                    Cùng nói chuyện một chút nhé 🌷
-                </h3>
-
-
-                <p>
-                    Không cần phải ngại ngùng.
-                    Mọi câu chuyện về tình yêu đều
-                    xứng đáng được lắng nghe và tôn trọng.
-                </p>
-
-
-                <div class="contact-item">
-
-                    💙
-                    <strong>
-                        Facebook:
-                    </strong>
-
-                    <br>
-
-                    facebook.com/chihilove
-
-                </div>
-
-
-                <div class="contact-item">
-
-                    💚
-                    <strong>
-                        Zalo:
-                    </strong>
-
-                    <br>
-
-                    Liên hệ Chihi qua Zalo
-
-                </div>
-
-
-                <div class="contact-item">
-
-                    💌
-                    <strong>
-                        Email:
-                    </strong>
-
-                    <br>
-
-                    hello@chihilove.vn
-
-                </div>
-
-            </div>
-
-
-
-            <form
-                onsubmit="submitContact(event)"
-            >
-
+            <form onsubmit="submitConsultation(event)">
 
                 <div class="form-group">
 
                     <label>
-                        Họ và tên
+                        Tên của bạn
                     </label>
 
                     <input
                         type="text"
+                        id="name"
+                        placeholder="Nhập tên của bạn..."
                         required
-                        placeholder="Tên của bạn"
                     >
 
                 </div>
 
 
-
                 <div class="form-group">
 
                     <label>
-                        Email
-                    </label>
-
-                    <input
-                        type="email"
-                        required
-                        placeholder="email@example.com"
-                    >
-
-                </div>
-
-
-
-                <div class="form-group">
-
-                    <label>
-                        Lời nhắn
+                        Vấn đề cần tư vấn
                     </label>
 
                     <textarea
+                        id="problem"
+                        placeholder="Bạn đang gặp vấn đề gì trong tình yêu?"
                         required
-                        placeholder="Bạn muốn chia sẻ điều gì?"
                     ></textarea>
 
                 </div>
 
 
+                <div class="form-group">
+
+                    <label>
+                        Số điện thoại
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        placeholder="Nhập số điện thoại..."
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Link Facebook / Zalo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="social"
+                        placeholder="Facebook hoặc Zalo của bạn..."
+                    >
+
+                </div>
+
 
                 <button
-                    class="btn btn-primary"
                     type="submit"
+                    class="submit-button"
                 >
-                    💌 Gửi lời nhắn
+                    💌 Gửi đăng ký tư vấn
                 </button>
-
 
             </form>
 
-
         </div>
 
     </div>
 
-</section>
 
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
-
-<!-- ==================================================
-     INFORMATION
-================================================== -->
-
-<section id="info">
-
-
-    <div class="section-title">
-
-        <span class="small">
-            About us
-        </span>
-
-
-        <h2>
-            Thông tin 🌸
-        </h2>
-
+    <footer>
 
         <p>
-            Những người đứng sau góc nhỏ Chihi Love.
+            Made with <span>♥</span> by ChihiLove
         </p>
 
-    </div>
+        <p>
+            🌷 Một nơi nhỏ dành cho những trái tim đang yêu 🌷
+        </p>
 
+    </footer>
 
 
-    <div class="people-grid">
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
 
+    <script>
 
-        <div class="person-card">
+        /* Mở khung tư vấn */
 
-            <div class="person-avatar">
-                👩🏻‍💼
-            </div>
+        function openConsultation() {
 
+            document
+                .getElementById("consultationModal")
+                .classList.add("active");
 
-            <h3>
-                Chu Đặng Phương Linh
-            </h3>
+        }
 
 
-            <p>
-                Thành viên tư vấn và đồng hành
-                cùng những câu chuyện tình yêu.
-            </p>
+        /* Đóng khung tư vấn */
 
-        </div>
+        function closeConsultation() {
 
+            document
+                .getElementById("consultationModal")
+                .classList.remove("active");
 
+        }
 
-        <div class="person-card">
 
-            <div class="person-avatar">
-                👩🏻‍💻
-            </div>
+        /* Bấm ra ngoài modal để đóng */
 
+        function closeOutside(event) {
 
-            <h3>
-                Đặng Võ Ngân Trâm
-            </h3>
+            if (
+                event.target.id === "consultationModal"
+            ) {
 
+                closeConsultation();
 
-            <p>
-                Thành viên đồng hành và xây dựng
-                nội dung cho Chihi Love.
-            </p>
+            }
 
-        </div>
+        }
 
 
-    </div>
+        /* Nhấn ESC để đóng */
 
-</section>
-
-
-
-<!-- ==================================================
-     FOOTER
-================================================== -->
-
-<footer>
-
-
-    <div class="footer-logo">
-        Chihi Love 💕
-    </div>
-
-
-    <p>
-        Một góc nhỏ cho những trái tim đang yêu.
-    </p>
-
-
-    <br>
-
-
-    <p>
-        © 2026 Chihi Love. Made with 💗
-    </p>
-
-
-</footer>
-
-
-
-<!-- ==================================================
-     CHIHI - NHÂN VẬT GÓC PHẢI
-================================================== -->
-
-<div
-    class="chihi-container"
-    onclick="openModal()"
->
-
-
-    <!-- Bong bóng -->
-
-    <div class="chihi-message">
-
-        👋 Nhấn vào tớ để
-        <br>
-        chọn tư vấn nha! 💕
-
-    </div>
-
-
-    <!--
-        ==================================================
-        HÌNH CHIHI CỦA BẠN
-        ==================================================
-
-        File phải nằm cùng thư mục với index.html:
-
-        index.html
-        chihi.png
-
-        Nếu ảnh nằm trong thư mục images:
-
-        src="images/chihi.png"
-    -->
-
-    <div class="chibi">
-
-        <img
-            src="chibi.png"
-            alt="Chihi - Tư vấn tình yêu"
-        >
-
-    </div>
-
-</div>
-
-/* ===== CHIBI TƯ VẤN ===== */
-.chibi-helper {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    width: 120px;
-    z-index: 9999;
-    cursor: pointer;
-
-    /* Chibi đi theo màn hình khi cuộn */
-    transition: transform 0.3s ease;
-}
-
-.chibi-helper img {
-    width: 120px;
-    height: auto;
-    display: block;
-    object-fit: contain;
-
-    /* Hiệu ứng nhấp nhô nhẹ */
-    animation: chibiFloat 2.5s ease-in-out infinite;
-
-    /* Không làm ảnh bị méo */
-    max-width: 100%;
-}
-
-/* Bóng thoại */
-.chibi-message {
-    position: absolute;
-    right: 90px;
-    bottom: 70px;
-
-    width: 220px;
-    padding: 14px 18px;
-
-    background: white;
-    border-radius: 20px;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
-
-    color: #d85b91;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Chibi bay lên xuống */
-@keyframes chibiFloat {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Điện thoại */
-@media (max-width: 600px) {
-    .chibi-helper {
-        width: 85px;
-        right: 10px;
-        bottom: 15px;
-    }
-
-    .chibi-helper img {
-        width: 85px;
-    }
-
-    .chibi-message {
-        right: 65px;
-        bottom: 50px;
-        width: 170px;
-        font-size: 13px;
-        padding: 10px;
-    }
-}
-
-<!-- ==================================================
-     MODAL TƯ VẤN
-================================================== -->
-
-<div
-    class="modal"
-    id="consultModal"
->
-
-
-    <div class="modal-box">
-
-
-        <button
-            class="close"
-            onclick="closeModal()"
-            aria-label="Đóng"
-        >
-            ×
-        </button>
-
-
-
-        <div class="modal-header">
-
-
-            <div class="emoji">
-                💕
-            </div>
-
-
-            <h2>
-                Chihi muốn nghe chuyện của bạn
-            </h2>
-
-
-            <p>
-                Hãy điền một chút thông tin để Chihi
-                có thể hiểu và tư vấn cho bạn tốt hơn nha.
-            </p>
-
-        </div>
-
-
-
-        <form
-            onsubmit="submitConsultation(event)"
-        >
-
-
-            <!-- TÊN -->
-
-            <div class="form-group">
-
-                <label>
-                    Tên của bạn *
-                </label>
-
-
-                <input
-                    id="consultName"
-                    type="text"
-                    placeholder="Ví dụ: Nguyễn An"
-                    required
-                >
-
-            </div>
-
-
-
-            <!-- VẤN ĐỀ -->
-
-            <div class="form-group">
-
-                <label>
-                    Vấn đề cần tư vấn *
-                </label>
-
-
-                <textarea
-                    id="consultProblem"
-                    placeholder="Hãy kể Chihi nghe câu chuyện của bạn..."
-                    required
-                ></textarea>
-
-            </div>
-
-
-
-            <!-- SĐT -->
-
-            <div class="form-group">
-
-                <label>
-                    Số điện thoại *
-                </label>
-
-
-                <input
-                    id="consultPhone"
-                    type="tel"
-                    placeholder="09xxxxxxxx"
-                    required
-                >
-
-            </div>
-
-
-
-            <!-- FACEBOOK / ZALO -->
-
-            <div class="form-group">
-
-                <label>
-                    Link Facebook / Zalo
-                </label>
-
-
-                <input
-                    id="consultSocial"
-                    type="text"
-                    placeholder="Facebook hoặc Zalo của bạn"
-                >
-
-            </div>
-
-
-
-            <!-- SUBMIT -->
-
-            <button
-                class="btn btn-primary"
-                style="width:100%; margin-top:5px;"
-                type="submit"
-            >
-                💌 Gửi thông tin cho Chihi
-            </button>
-
-
-        </form>
-
-
-    </div>
-
-</div>
-
-
-
-<!-- ==================================================
-     TOAST
-================================================== -->
-
-<div
-    class="toast"
-    id="toast"
->
-    💕 Thông tin đã được gửi!
-</div>
-
-
-
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
-
-<script>
-
-
-    /* ==================================================
-       MOBILE MENU
-    ================================================== */
-
-    function toggleMenu() {
-
-        const menu =
-            document.getElementById("navLinks");
-
-        menu.classList.toggle("active");
-
-    }
-
-
-
-    /* ==================================================
-       MỞ MODAL
-    ================================================== */
-
-    function openModal() {
-
-        document
-            .getElementById("consultModal")
-            .classList.add("active");
-
-    }
-
-
-
-    /* ==================================================
-       ĐÓNG MODAL
-    ================================================== */
-
-    function closeModal() {
-
-        document
-            .getElementById("consultModal")
-            .classList.remove("active");
-
-    }
-
-
-
-    /* ==================================================
-       CLICK RA NGOÀI MODAL
-    ================================================== */
-
-    document
-        .getElementById("consultModal")
-        .addEventListener(
-            "click",
+        document.addEventListener(
+            "keydown",
             function(event) {
 
-                if (event.target === this) {
+                if (event.key === "Escape") {
 
-                    closeModal();
+                    closeConsultation();
 
                 }
 
@@ -2651,180 +1298,130 @@
         );
 
 
+        /* =========================
+           CHIBI DI CHUYỂN KHI CUỘN
+        ========================== */
 
-    /* ==================================================
-       NHẤN ESC ĐỂ ĐÓNG
-    ================================================== */
+        let lastScroll = window.scrollY;
 
-    document.addEventListener(
-        "keydown",
-        function(event) {
-
-            if (event.key === "Escape") {
-
-                closeModal();
-
-            }
-
-        }
-    );
+        const chibi =
+            document.getElementById("chibi-helper");
 
 
-
-    /* ==================================================
-       FORM TƯ VẤN
-    ================================================== */
-
-    function submitConsultation(event) {
-
-        event.preventDefault();
-
-
-        const name =
-            document.getElementById(
-                "consultName"
-            ).value;
-
-
-        const problem =
-            document.getElementById(
-                "consultProblem"
-            ).value;
-
-
-        const phone =
-            document.getElementById(
-                "consultPhone"
-            ).value;
-
-
-        const social =
-            document.getElementById(
-                "consultSocial"
-            ).value;
-
-
-        /*
-            Dữ liệu hiện tại được lấy ra
-            để bạn có thể kết nối database
-            sau này.
-
-            Ví dụ:
-
-            console.log(name);
-            console.log(problem);
-            console.log(phone);
-            console.log(social);
-        */
-
-
-        console.log({
-            name: name,
-            problem: problem,
-            phone: phone,
-            social: social
-        });
-
-
-        closeModal();
-
-
-        showToast(
-            "💕 Cảm ơn bạn! Chihi đã nhận được thông tin."
-        );
-
-
-        event.target.reset();
-
-    }
-
-
-
-    /* ==================================================
-       FORM LIÊN HỆ
-    ================================================== */
-
-    function submitContact(event) {
-
-        event.preventDefault();
-
-
-        showToast(
-            "💌 Cảm ơn bạn đã gửi lời nhắn cho Chihi!"
-        );
-
-
-        event.target.reset();
-
-    }
-
-
-
-    /* ==================================================
-       TOAST
-    ================================================== */
-
-    let toastTimer;
-
-
-    function showToast(message) {
-
-        const toast =
-            document.getElementById("toast");
-
-
-        toast.textContent = message;
-
-
-        toast.classList.add("show");
-
-
-        clearTimeout(toastTimer);
-
-
-        toastTimer = setTimeout(
+        window.addEventListener(
+            "scroll",
             function() {
 
-                toast.classList.remove("show");
-
-            },
-            3000
-        );
-
-    }
+                const currentScroll =
+                    window.scrollY;
 
 
+                if (
+                    currentScroll > lastScroll
+                ) {
 
-    /* ==================================================
-       ĐÓNG MOBILE MENU KHI CLICK LINK
-    ================================================== */
+                    /* Cuộn xuống */
 
-    document
-        .querySelectorAll(".nav-links a")
-        .forEach(
-            function(link) {
+                    chibi.style.transform =
+                        "translateY(15px)";
 
-                link.addEventListener(
-                    "click",
-                    function() {
+                } else {
 
-                        document
-                            .getElementById(
-                                "navLinks"
-                            )
-                            .classList.remove(
-                                "active"
-                            );
+                    /* Cuộn lên */
 
-                    }
+                    chibi.style.transform =
+                        "translateY(-15px)";
+
+                }
+
+
+                clearTimeout(
+                    window.chibiTimer
                 );
+
+
+                window.chibiTimer =
+                    setTimeout(
+                        function() {
+
+                            chibi.style.transform =
+                                "translateY(0)";
+
+                        },
+                        250
+                    );
+
+
+                lastScroll = currentScroll;
 
             }
         );
 
 
-</script>
+        /* =========================
+           GỬI FORM
+        ========================== */
 
+        function submitConsultation(event) {
+
+            event.preventDefault();
+
+
+            const name =
+                document.getElementById("name").value;
+
+            const problem =
+                document.getElementById("problem").value;
+
+            const phone =
+                document.getElementById("phone").value;
+
+            const social =
+                document.getElementById("social").value;
+
+
+            /*
+                Hiện tại website tĩnh nên
+                chưa có máy chủ để nhận dữ liệu.
+
+                Phần này lưu thông tin tạm
+                vào trình duyệt.
+            */
+
+            const consultation = {
+
+                name: name,
+
+                problem: problem,
+
+                phone: phone,
+
+                social: social,
+
+                time: new Date().toLocaleString("vi-VN")
+
+            };
+
+
+            localStorage.setItem(
+                "chihiConsultation",
+                JSON.stringify(consultation)
+            );
+
+
+            alert(
+                "💗 Đã gửi đăng ký thành công!\n\n" +
+                "Chihi sẽ sớm liên hệ với bạn nhé 🌷"
+            );
+
+
+            event.target.reset();
+
+            closeConsultation();
+
+        }
+
+    </script>
 
 </body>
 </html>
