@@ -2342,7 +2342,83 @@
 
 </div>
 
+/* ===== CHIBI TƯ VẤN ===== */
+.chibi-helper {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 120px;
+    z-index: 9999;
+    cursor: pointer;
 
+    /* Chibi đi theo màn hình khi cuộn */
+    transition: transform 0.3s ease;
+}
+
+.chibi-helper img {
+    width: 120px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+
+    /* Hiệu ứng nhấp nhô nhẹ */
+    animation: chibiFloat 2.5s ease-in-out infinite;
+
+    /* Không làm ảnh bị méo */
+    max-width: 100%;
+}
+
+/* Bóng thoại */
+.chibi-message {
+    position: absolute;
+    right: 90px;
+    bottom: 70px;
+
+    width: 220px;
+    padding: 14px 18px;
+
+    background: white;
+    border-radius: 20px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+
+    color: #d85b91;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Chibi bay lên xuống */
+@keyframes chibiFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Điện thoại */
+@media (max-width: 600px) {
+    .chibi-helper {
+        width: 85px;
+        right: 10px;
+        bottom: 15px;
+    }
+
+    .chibi-helper img {
+        width: 85px;
+    }
+
+    .chibi-message {
+        right: 65px;
+        bottom: 50px;
+        width: 170px;
+        font-size: 13px;
+        padding: 10px;
+    }
+}
 
 <!-- ==================================================
      MODAL TƯ VẤN
